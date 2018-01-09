@@ -6,11 +6,9 @@ public class OrderRow {
 	private String number;
 	private Double quantity;
 	private Product product;
-	private Order order;
 	
-	public OrderRow(String number, Order order, Product product) {
+	public OrderRow(String number, Product product) {
 		this.number = number;
-		this.order = order;
 		this.product = product;
 	}
 	
@@ -32,16 +30,4 @@ public class OrderRow {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-
-	public Order getOrder() {
-		return order;
-	}
-
-	public void setOrder(Order order) {
-		this.order = order;
-	}
-	
-	
-	
-	
 }
