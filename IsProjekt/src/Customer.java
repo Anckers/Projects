@@ -1,15 +1,15 @@
 import java.util.HashMap;
 
-public class Costumer {
+public class Customer {
 
-		private String costumerNumber;
+		private String customerNumber;
 		private String name;
 		private String adress;
 		
 		private HashMap<String, Order> ownedOrderMap = new HashMap<>();
 		
-		public Costumer(String costumerNumber, String name, String adress) {
-			setCostumerNumber(costumerNumber);
+		public Customer(String customerNumber, String name, String adress) {
+			setcustomerNumber(customerNumber);
 			setName(name);
 			setAdress(adress);
 		}
@@ -21,8 +21,8 @@ public class Costumer {
 			this.ownedOrderMap = ownedOrderMap;
 		}
 		
-		public void setCostumerNumber(String costumerNumber) {
-			this.costumerNumber = costumerNumber;
+		public void setcustomerNumber(String customerNumber) {
+			this.customerNumber = customerNumber;
 		}
 		
 		public void setName(String name) {
@@ -32,8 +32,8 @@ public class Costumer {
 			this.adress = adress;
 		}
 		
-		public String getCostumerNumber() {
-			return costumerNumber;
+		public String getcustomerNumber() {
+			return customerNumber;
 		}
 		public String getName() {
 			return name;
