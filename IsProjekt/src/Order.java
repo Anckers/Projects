@@ -5,14 +5,15 @@ public class Order {
 		
 	private String orderID;
 	private String deliveryDate;
-	private String owner;
+	private Customer customer;
 	private static int orderIdCounter = 000001;
 
 	private ArrayList<OrderRow> orderRowsList = new ArrayList<>();
-	public Order(OrderRow orderRow) {
+	
+	public Order(Customer customer) {
 		setOrderID(Integer.toString(orderIdCounter));
 		orderIdCounter++;
-		addOrderRow(orderRow);
+		setCustomer(customer);
 	}
 	
 	public void setOrderID(String orderID) {
@@ -23,8 +24,8 @@ public class Order {
 		this.deliveryDate = deliveryDate;
 	}
 	
-	public void setOwner(String owner) {
-		this.owner = owner;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 	public String getOrderID() {
 		return orderID;
@@ -34,8 +35,8 @@ public class Order {
 		return deliveryDate;
 	}
 	
-	public String getOwner() {
-		return owner;
+	public Customer getCustomer() {
+		return customer;
 	}
 	public OrderRow addOrderRow(OrderRow orderRow) {
 		if (!orderRowsList.contains(orderRow)) {
@@ -46,5 +47,4 @@ public class Order {
 			return null;
 		}
 	}
-
 }

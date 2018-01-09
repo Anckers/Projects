@@ -17,8 +17,8 @@ public class CustomerRegister {
 	}
 
 	public Boolean addCustomer(Customer customer) {
-		if (!customerRegisterMap.containsKey(customer.getcustomerNumber())) {
-			customerRegisterMap.put(customer.getcustomerNumber(), customer);
+		if (!customerRegisterMap.containsKey(customer.getCustomerNumber())) {
+			customerRegisterMap.put(customer.getCustomerNumber(), customer);
 			return true;			
 		}
 		else {
@@ -26,14 +26,14 @@ public class CustomerRegister {
 		}
 	}
 	
-	public Customer findcustomer(String customerNumber) {
+	public Customer findCustomer(String customerNumber) {
 		return customerRegisterMap.get(customerNumber);
 	}
 	
-	public Customer removecustomer(String customerNumber) {
-		if (customerRegisterMap.containsKey(customerNumber)) {
-			Customer customer = customerRegisterMap.get(customerNumber);
-			customerRegisterMap.remove(customerNumber);
+	public Customer removeCustomer(Customer customer2) {
+		if (customerRegisterMap.containsKey(customer2)) {
+			Customer customer = customerRegisterMap.get(customer2);
+			customerRegisterMap.remove(customer2);
 			return customer;
 		}
 		else {

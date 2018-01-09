@@ -9,7 +9,7 @@ public class Customer {
 		private HashMap<String, Order> ownedOrderMap = new HashMap<>();
 		
 		public Customer(String customerNumber, String name, String adress) {
-			setcustomerNumber(customerNumber);
+			setCustomerNumber(customerNumber);
 			setName(name);
 			setAdress(adress);
 		}
@@ -21,7 +21,7 @@ public class Customer {
 			this.ownedOrderMap = ownedOrderMap;
 		}
 		
-		public void setcustomerNumber(String customerNumber) {
+		public void setCustomerNumber(String customerNumber) {
 			this.customerNumber = customerNumber;
 		}
 		
@@ -32,7 +32,7 @@ public class Customer {
 			this.adress = adress;
 		}
 		
-		public String getcustomerNumber() {
+		public String getCustomerNumber() {
 			return customerNumber;
 		}
 		public String getName() {
@@ -44,6 +44,7 @@ public class Customer {
 		public Boolean addOrder(Order order) {
 			if (!ownedOrderMap.containsKey(order.getOrderID())) {
 				ownedOrderMap.put(order.getOrderID(), order);
+				order.setCustomer(this);
 				return true;
 			}
 			else {
@@ -51,5 +52,19 @@ public class Customer {
 			}
 		}
 		
+		public Order removeOrder(Order order) {
+			if (!ownedOrderMap.containsKey(order.getOrderID())) {
+				Order o = ownedOrderMap.get(order);
+				ownedOrderMap.remove(order);
+				return order;
+			}
+			else {
+				return null;
+			}
+		}
+		
+		public Order findOrder(String orderID) {
+			return ownedOrderMap.get(orderID);
+		}
 }
 
